@@ -1,6 +1,6 @@
 <?php
 
-namespace JamRouter\Router;
+namespace JamCommits\Router;
 
 enum HttpMethod: string {
 case GET = 'GET';

@@ -1,6 +1,6 @@
 <?php
 
-namespace JamRouter\Router;
+namespace JamCommits\Router;
 
 class Router {
     private array $routes = [];
