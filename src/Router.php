@@ -16,14 +16,14 @@ class Router {
     public function dispatch(string $requestUri, string $requestMethod): void {
         $httpMethod = HttpMethod::tryFrom($requestMethod);
         if (!$httpMethod) {
-            http_response_code(405); // 405 Method Not Allowed
+            http_response_code(405);
             echo "405 Method Not Allowed";
             return;
         }
 
         foreach ($this->routes as $route) {
             if ($route['path'] === $requestUri && $route['method'] === $httpMethod) {
-                $route['callback'](); // First-class callable, mais pas de return nécessaire
+                call_user_func($route['callback']);
                 return;
             }
         }
